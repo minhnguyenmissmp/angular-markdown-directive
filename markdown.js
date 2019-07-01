@@ -3,10 +3,9 @@
  * (c) 2013-2014 Brian Ford http://briantford.com
  * License: MIT
  */
+var showdown = require('../showdown');
 
 'use strict';
-
-var showdown = require('../showdown');
 
 angular.module('btford.markdown', ['ngSanitize']).
   provider('markdownConverter', function () {
@@ -16,7 +15,7 @@ angular.module('btford.markdown', ['ngSanitize']).
         opts = newOpts;
       },
       $get: function () {
-        return new showdown.converter(opts);
+        return new showdown.Converter(opts);
       }
     };
   }).
